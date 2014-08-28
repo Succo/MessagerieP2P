@@ -1,7 +1,7 @@
 window.onload = function() {
  
     var messages = [];
-    var socket = io.connect('http://10.0.0.6:3700');
+    var socket = io.connect('');
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var changeButton = document.getElementById("changeName");
