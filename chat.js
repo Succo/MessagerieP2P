@@ -1,7 +1,8 @@
 window.onload = function() {
  
     var messages = [];
-    var socket = io.connect('');
+    var socket = io.connect('http://10.0.0.6:3700');
+    var siofu = new SocketIOFileUpload(socket);
     var field = document.getElementById("field");
     var sendButton = document.getElementById("send");
     var changeButton = document.getElementById("changeName");
@@ -9,7 +10,7 @@ window.onload = function() {
     var $modal2 = jQuery('#modal');
     var content = document.getElementById("content");
     var name = document.getElementById("name");
-    
+     
     $modal2.dialog({ height: 350,
                         width: 400,
                         modal: true,
@@ -77,5 +78,9 @@ window.onload = function() {
     		$modal2.show();
     		$modal2.dialog("open");
     	};
+    	
+   
+
+    siofu.listenOnInput(document.getElementById("files"));
  
 }
