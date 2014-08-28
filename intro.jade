@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        title= "Real time web chat"
+        link(href='/jquery-ui-1.11.1/jquery-ui.min.css', rel='stylesheet')
+        link(href='/chatcss.css',rel='stylesheet')
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+        script(src='/jquery-ui-1.11.1/jquery-ui.min.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='/chat.js')
+   
+    body
+        #content(style='width: 512px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+        .controls
+            input#field(style='width:350px;')
+            input#send(type='button', value='send')
+            //br
+            input#changeName(type='button', value='nouveau nom')
+         #modal(style="display:none",class="ui-dialog ui-widget  ui-corner-all undefined ui-draggable ui-resizable")
+            #divint(class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix")
+               |Choisi ton nom
+            br
+            input#name(style='width:360px;')
+            br
+            center
+               input#validateName(type='button', value='ok')
+            
