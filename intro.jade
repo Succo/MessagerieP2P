@@ -1,21 +1,30 @@
+// code jade génèrant la page html
 doctype html
 html(lang="en")
     head
+        //libraire et css utilisé
         title= "Real time web chat"
         link(href='/jquery-ui-1.11.1/jquery-ui.min.css', rel='stylesheet')
+        //ce css permet de modifier ui-dialog pour
         link(href='/chatcss.css',rel='stylesheet')
         script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
         script(src='/jquery-ui-1.11.1/jquery-ui.min.js')
         script(src='/socket.io/socket.io.js')
+        script(src='/clientmin.js')
+        //code de la page
         script(src='/chat.js')
    
     body
+        //zone de chat
         #content(style='width: 512px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
         .controls
+            //controle pour la discussion
             input#field(style='width:350px;')
             input#send(type='button', value='send')
             //br
+            //bouton pour réouvrir la fenètre de choix du nom
             input#changeName(type='button', value='nouveau nom')
+        // fenètre de choix du nom
          #modal(style="display:none",class="ui-dialog ui-widget  ui-corner-all undefined ui-draggable ui-resizable")
             #divint(class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix")
                |Choisi ton nom
@@ -23,5 +32,9 @@ html(lang="en")
             input#name(style='width:360px;')
             br
             center
+               br
                input#validateName(type='button', value='ok')
+         //Bouton pour l'upload de fichier
+         .controls
+            input#files(type='file',name='files[]',multiples)
             
